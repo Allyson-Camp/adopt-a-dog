@@ -8,7 +8,7 @@ export async function getDogs() {
     // from the dogs table, select all items
     const { data, error } = await client
         .from('dogs')
-        .select('*');
+        .select(`*, dog_breeds (name)`);
     if (error) console.error(error);
     // and return the response
     return data;

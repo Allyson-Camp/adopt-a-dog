@@ -7,7 +7,7 @@ export function renderDogCard(dog) {
     div.classList.add('dog-card');
 
     p.textContent = dog.name;
-    img.src = `./assets/${dog.breed}.jpeg`;
+    img.src = `./assets/${dog.dog_breeds.name}.jpeg`;
     a.href = ''; // link to the dog's detail page here
 
     div.append(p, img);
