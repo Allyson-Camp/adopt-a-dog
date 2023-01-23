@@ -59,3 +59,30 @@ The following is required for your assignment to be graded:
 | ASYNC: `getDog(id)` : return single dog from supabase                                          | 1      |
 | Detail page should get the id from the URL and use that id to fetch that dog from supabase.    | 2      |
 | Detail page should show the user details about the dog (including age, breed, and description) | 2      |
+
+## notes
+- linked table is dog_breeds and correlates to breed_id in the main table
+
+
+## slices to work on
+- main page on load:
+    - list of all dogs 
+
+-detail page on load:
+    - details about 1 dog
+
+## events
+- main page load window.eventlistener('load')
+    - get all data from supabase
+    - put it into state
+    - loop through names in state (refactor into render function)
+        - render each game as a div and append them to html skeleton (section it is in that we appended ot the dom)
+    - refactor into display function
+
+- dog detail page
+    - anchor tag w/ href takes to the new page on load
+    - select a specific id from supabase
+    - put the data into state
+    Const data - new URLSearchParams(window.location.search);
+    - Const id = data.get(‘id’) //we need to add id to the url in our anchor te=ag on the list page <a href=`..detail/?id=${idInSupabase}`>
+    - Use fetched data to display text on detail page
