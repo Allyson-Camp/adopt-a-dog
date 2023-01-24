@@ -28,11 +28,12 @@ export function renderDogDetail(dogData) {
     img.src = `../assets/${dogData.dog_breeds.name}.jpeg`;
 
      // adding classlists
+    ageAndBreedEl.classList.add('age-and-breed');
     div.classList.add('dog-detail');
-     descriptionEl.classList.add('description');
+    descriptionEl.classList.add('description');
     nameEl.classList.add('name');
     img.classList.add('img');
-    ageAndBreedEl.classList.add('age-and-breed');
+    
 
     // examine the css classes already written and finish writing a detail page using the above elements
     descriptionEl.textContent = dogData.description;
