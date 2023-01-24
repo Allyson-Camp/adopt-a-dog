@@ -1,4 +1,4 @@
-import { getDog, getDogs } from '../fetch-utils.js';
+import { getDog } from '../fetch-utils.js';
 import { renderDogDetail } from '../render-utils.js';
 
 const dogDetailContainer = document.getElementById('dog-detail-container');
@@ -10,19 +10,21 @@ let dogData = {};
 //event
 window.addEventListener('load', async () => {
     // on load
+    const data = new URLSearchParams(window.location.search);
+    const id = data.get('id');
+
     const dog = await getDog(id);
     dogData = dog;
-        // console.log(dog);
-    
-    renderDogDetail(dog);
-    dogDetailContainer.append(dog);
+   console.log(dog);     
+    // renderDogDetail(dog);
+    // dogDetailContainer.append(dog);
+    displayDog();
 });
-// on load
-// get the id from URL
 
-// use the id to fetch the dog
-// render and append this dog's details to the container
+function displayDog() {
+    for (let dog of dogData) {
+        const dogDetailEl = renderDogDetail(dog);
+        dogDetailContainer.append(dogDetailEl);
+    }
+}
 
-const data = new URLSearchParams(window.location.search);
-
-const id = data.get('id');

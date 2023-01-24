@@ -14,7 +14,7 @@ window.addEventListener('load', async () => {
 // fetch all dogs
     const dogs = await getDogs();
     dogsData = dogs;
-    // console.log(dogs);
+    console.log(dogs);
 // render and append all dog cards to the container
     displayDogs();
 });
