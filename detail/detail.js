@@ -15,16 +15,14 @@ window.addEventListener('load', async () => {
 
     const dog = await getDog(id);
     dogData = dog;
-   console.log(dog);     
+    console.log(dog);     
     // renderDogDetail(dog);
     // dogDetailContainer.append(dog);
-    displayDog();
+    displayDog(dogData);
 });
 
-function displayDog() {
-    for (let dog of dogData) {
-        const dogDetailEl = renderDogDetail(dog);
-        dogDetailContainer.append(dogDetailEl);
-    }
+function displayDog(dogData) {
+    const dogDetailEl = renderDogDetail(dogData);
+    dogDetailContainer.append(dogDetailEl);
 }
 
