@@ -17,5 +17,10 @@ export async function getDogs() {
 
 export async function getDog(id) {
     // from the dogs table, select a single dog who has the matching id
-    // and return the response
+    const { data, error } = await client
+        .from('dogs')
+        .select(`*, dog_breeds (id)`);
+    if (error) console.error(error);
+// and return the response
+    return data;
 }
