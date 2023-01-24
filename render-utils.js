@@ -32,6 +32,7 @@ export function renderDogDetail(dogData) {
     div.classList.add('dog-detail');
     descriptionEl.classList.add('description');
     nameEl.classList.add('name');
+    breedEl.classList.add('breed');
     img.classList.add('img');
     
 
@@ -39,7 +40,7 @@ export function renderDogDetail(dogData) {
     descriptionEl.textContent = dogData.description;
     nameEl.textContent = dogData.name;
     ageEl.textContent = dogData.age;
-    breedEl.textContent = dogData.breed;
+    breedEl.textContent = dogData.dog_breeds.name;
     
     //appending everything
     ageAndBreedEl.append(ageEl, breedEl);
